@@ -1,11 +1,8 @@
 <% layout('layouts/boilerplate')%>
 <link rel="stylesheet" href="/stylesheet/star.css">
 
-
-
-
 <div class="row">
-    <div class="col-6">        
+    <div class="col-6">
       <div id="campgroundcarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <% campground.images.forEach((img, i) => { %>
@@ -40,7 +37,7 @@
               <a href="/campgrounds/<%= campground._id%>/edit" class="card-link btn btn-info">Edit</a>
               <form class="d-inline"action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">
                 <button class="btn btn-danger">Delete</button>
-            </form>            
+            </form>
             </div>
             <% } %>
             <div class="card-footer text-muted">
@@ -83,7 +80,7 @@
         <div class="card mb-3">
           <div class="mb-3 card-body">
             <!-- <h5 class="card-title">Rating: <%= review.rating%></h5> -->
-            <h6 class="card-subtitle mb-2 text-muted">By <%= review.author.username%></h6>  
+            <h6 class="card-subtitle mb-2 text-muted">By <%= review.author.username%></h6>
             <p class="starability-result" data-rating="<%= review.rating%>">
                 Rated: <%= review.rating%>> stars
               </p>
